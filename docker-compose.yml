@@ -1,0 +1,8 @@
+# docker compose up --build  ->  http://localhost:8080
+services:
+  monitor:
+    build: .
+    environment:
+      RECORD_DIR: /logs
+    ports: ["8080:8000", "5600:5600/udp", "5601:5601"]
+    volumes: ["./logs:/logs"]
